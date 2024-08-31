@@ -15,7 +15,7 @@ void Problema_17();
 
 int main()
 {
-    Problema_3();
+    Problema_11();
 
     return 0;
 
@@ -82,21 +82,75 @@ void Problema_3()
 
 void Problema_5()
 {
-    cout << "*** PROBLEMA 5 ***" << endl;
+    int n;
 
+    cout << "*** PROBLEMA 5 ***" << endl << endl;
+
+    cout << "Ingrese un numero entero impar: ";
+    cin >> n;
+
+    cout << endl;
+
+    if (n % 2 == 0) {
+    cout << endl << "El numero debe ser impar." << endl << endl;
+    return;
+    }
+
+    for (int i = 1; i <= n; i += 2) {
+        for (int j = 0; j < (n - i)/2 ; ++j) {
+            cout << " ";
+        }
+        for (int j = 0; j < i; ++j) {
+            cout << "*";
+        }
+            cout << endl;
+    }
+
+    for (int i = n -2; i >= 1; i -=2){
+        for (int j = 0; j < (n - i)/2 ; ++j) {
+            cout << " ";
+        }
+        for (int j = 0; j < i; ++j) {
+        cout << "*";
+        }
+        cout << endl;
+    }
+
+    cout << endl;
 }
 
 
 void Problema_7()
 {
-    cout << "*** PROBLEMA 7 ***" << endl;
+    cout << "*** PROBLEMA 7 ***" << endl << endl;
 
+    int n, suma = 0;
+    int a = 1, b = 1;
+
+
+    cout << "Ingrese un numero entero : ";
+    cin >> n;
+    cout << endl;
+
+    cout << "La serie Fibonacci hasta " << n << ": " << endl;
+    cout << a << " ";
+    cout << b << " ";
+
+    for (int c = a + b; c <=  n;  c = a + b){
+        if (c % 2 == 0){
+            suma += c;
+        }
+        a = b;
+        b = c;
+        cout << c << " ";
+       }
+        cout << endl << endl << "El resultado de la suma es: " << suma << endl << endl;
 }
 
 
 void Problema_9()
 {
-    int N=0;
+    int N;
     int suma=0;
 
     cout << "*** PROBLEMA 9 ***" << endl << endl;
@@ -104,20 +158,21 @@ void Problema_9()
     cout << "Ingrese un numero entero: ";
     cin >> N;
 
-    while (N > 0) {
-        int digito = N % 10;
-        int resultado = 1;
+    if (N <= 0){
+        cout << endl << "Ingrese un numero Mayor que 0" << endl << endl;
+        return;
+    }
 
-        for (int i = 0; i < digito; i++) {
-            resultado *= digito;
+
+    for (int num = N; num > 0; num /= 10) {
+        int digito = num % 10;
+        int temp = digito;
+        for (int i = 1; i < digito; ++i) {
+            temp *= digito;
         }
-
-        suma += resultado;
-        N /= 10;
-     }
-
+        suma += temp;
+    }
     cout << endl << "El resultado de la suma es: " << suma << endl << endl;
-
 }
 
 
@@ -125,7 +180,27 @@ void Problema_11()
 {
     cout << "*** PROBLEMA 11 ***" << endl;
 
-}
+    int N;
+
+    cout << "Ingrese un numero entero: ";
+    cin >> N;
+
+    if (N <= 0){
+        cout << endl << "Ingrese un numero Mayor que 0" << endl << endl;
+        return;
+    }
+
+    for (int num = 2; num <= N; ++num) {
+        for (; N % num == 0; N /= num) {
+            cout << num << " ";  // Imprimir el factor primo
+                }
+            }
+
+            cout << endl;
+        }
+
+//    cout << endl << "El resultado de la suma es: " << MCM << endl << endl;
+
 
 
 void Problema_13()
@@ -143,8 +218,7 @@ void Problema_15()
 
 
 void Problema_17()
-    {
-        cout << "*** PROBLEMA 17 ***" << endl;
+{
+    cout << "*** PROBLEMA 17 ***" << endl;
 
-    }
-
+}
