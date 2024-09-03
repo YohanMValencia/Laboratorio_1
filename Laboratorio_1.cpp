@@ -23,7 +23,7 @@ int problema_17();
 
 int main() {
     cout << "----------------------------------------\n";
-    cout << "|         L A B O R A T O R I O 1       |\n";
+    cout << "|       L A B O R A T O R I O   1       |\n";
     cout << "----------------------------------------\n";
     cout << "| 1. Problema 1                         |\n";
     cout << "| 2. Problema 2                         |\n";
